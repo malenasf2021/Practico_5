@@ -31,9 +31,7 @@ public class Ejercicio6y7 {
     for (Personaje p : unPersonaje){
         p.accionEspecial();
     }
-
     }
-   
 }
 ```
 
@@ -47,9 +45,7 @@ abstract class Personaje {
         this.nombre = nombre;
         this.nivel = nivel;
     }
-    
      public abstract void accionEspecial();
-    
 }
 ```
 
@@ -65,7 +61,6 @@ public class Mago extends Personaje {
     public void accionEspecial() {
         System.out.println("Soy el Mago de nombre: " + nombre + " y estoy en el nivel: " + nivel);
     }
-    
 }
 ```
 **Clase Guerrero:**
