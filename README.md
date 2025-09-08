@@ -132,7 +132,52 @@ public class Piano extends InstrumentoMusical{
 }
 ```
 ## Ejercicio 10
+**Main:**
+```java
+public class Ejercicio10 {
+    public static void main(String[] args) {
+        Sensor[] sensores = {new SensorTemperatura(), new SensorPresion()};
+        
+       Sensor[] sensores = new Sensor[2];
+       sensores[0] = new SensorTemperatura();
+       sensores[1] = new SensorPresion(); 
 
+        for (Sensor s : sensores) {
+            s.medir();
+        }
+    }
+}
+```
+**Sensor:**
+```java
+abstract class Sensor {
+    float valor;
+    
+    public abstract void medir();
+}
+```
+**Sensor presión:**
+```java
+public class SensorPresion extends Sensor{
+
+    @Override
+    public void medir() {
+        valor= (float) (Math.random()*100);
+        System.out.println("Temperatura: " + valor + " grados Celsius");
+    }
+}
+```
+**Sensor temperatura:**
+```java
+public class SensorTemperatura extends Sensor{
+
+    @Override
+    public void medir() {
+        valor= (float) (Math.random()*200);
+        System.out.println("Presión: " + valor + " hPa");
+    }
+}
+```
 ## Ejercicio 11
 
 ## Ejercicio 12
