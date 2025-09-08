@@ -13,9 +13,9 @@
 
 # Códigos: 
 ## Ejercicios 6 y 7
-Crea una clase abstracta Personaje con atributos nombre y nivel. Define un método abstracto
-accionEspecial(). Implementa las clases Mago y Guerrero, cada una con su propia versión de
-accionEspecial().
+Crea una clase abstracta `Personaje` con atributos `nombre` y `nivel`. Define un método abstracto
+`accionEspecial()`. Implementa las clases `Mago` y `Guerrero`, cada una con su propia versión de
+`accionEspecial()`.
 
 **Main:**
 ```java
@@ -78,7 +78,58 @@ public class Guerrero extends Personaje{
 }
 ```
 ## Ejercicios 8 y 9
+Crea una clase base `InstrumentoMusical` con un método abstracto `tocarNota(String nota)`.
+Implementa `Guitarra` y `Piano` con comportamientos distintos al tocar la misma nota.
+En el `main`, crea un **arreglo** de `InstrumentoMusical` con distintos instrumentos y haz que toquen una
+secuencia de notas aleatorias.
+**Main:**
+```java
+import java.util.Random;
 
+public class Ejercicio8y9 { 
+    public static void main(String[] args) { 
+        InstrumentoMusical[] instrumentos = { new Guitarra(), new Piano(), new Guitarra(), new Piano() }; 
+        String[] notas = {"Do", "Re", "Mi", "Fa", "Sol", "La", "Si"}; 
+        Random r = new Random(); 
+        
+        for (InstrumentoMusical inst : instrumentos) { 
+            String nota = notas[r.nextInt(notas.length)]; 
+            inst.tocarNota(nota); 
+        } 
+    } 
+}
+```
+**Instrumento musical:**
+```java
+abstract class InstrumentoMusical {
+    
+    public abstract void tocarNota(String nota);
+
+    String getNombre() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    } 
+}
+```
+**Guitarra:**
+```java
+public class Guitarra extends InstrumentoMusical {
+
+    @Override
+    public void tocarNota(String nota) {
+        System.out.println("La guitarra toca la nota: " + nota);
+    }
+}
+```
+**Piano:**
+```java
+public class Piano extends InstrumentoMusical{
+
+    @Override
+    public void tocarNota(String nota) {
+       System.out.println("El piano toca la nota: " + nota);
+    }
+}
+```
 ## Ejercicio 10
 
 ## Ejercicio 11
