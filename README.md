@@ -10,3 +10,88 @@
 | **13** | Clase abstracta `VehiculoAereo` con método `despegar()`. Subclases `Avion` y `Helicoptero`. | Crear un arreglo polimórfico y mostrar el orden de despegue según la posición en el arreglo. |
 | **14** | Clase abstracta `Figura` con subclases `Poligono` y `Estrella`. | Detectar, mediante `instanceof`, cuántos elementos son de cada tipo y mostrarlo en pantalla. |
 | **15** | Simulación de carrera de `Vehiculo` con subclases `Auto` y `Moto`. | Cada vehículo avanza una distancia aleatoria por turno. Determinar ganador al final de 5 rondas usando un arreglo polimórfico. |
+
+# Códigos: 
+## Ejercicios 6 y 7
+Crea una clase abstracta Personaje con atributos nombre y nivel. Define un método abstracto
+accionEspecial(). Implementa las clases Mago y Guerrero, cada una con su propia versión de
+accionEspecial().
+
+**Main:**
+```java
+public class Ejercicio6y7 {
+
+    public static void main(String[] args) {
+        Personaje[] unPersonaje = new Personaje[4];
+        unPersonaje[0]= new Mago ("Gandalf", 1);
+        unPersonaje[1]= new Guerrero ("Xena", 2);
+        unPersonaje[2]= new Mago ("Merlín", 3);
+        unPersonaje[3]= new Guerrero ("He-man", 4);
+    
+    for (Personaje p : unPersonaje){
+        p.accionEspecial();
+    }
+
+    }
+   
+}
+```
+
+**Clase personaje:**
+```java
+abstract class Personaje {
+    protected String nombre;
+    protected int nivel;
+
+    public Personaje(String nombre, int nivel) {
+        this.nombre = nombre;
+        this.nivel = nivel;
+    }
+    
+     public abstract void accionEspecial();
+    
+}
+```
+
+**Clase Mago:**
+```java
+public class Mago extends Personaje {
+
+    public Mago(String nombre, int nivel) {
+        super(nombre, nivel);
+    }
+
+    @Override
+    public void accionEspecial() {
+        System.out.println("Soy el Mago de nombre: " + nombre + " y estoy en el nivel: " + nivel);
+    }
+    
+}
+```
+**Clase Guerrero:**
+```java
+public class Guerrero extends Personaje{
+
+    public Guerrero(String nombre, int nivel) {
+        super(nombre, nivel);
+    }
+    
+    @Override
+    public void accionEspecial() {
+        System.out.println("Soy el Guerrero de nombre: " + nombre + " y estoy en el nivel: " + nivel);
+    }
+}
+```
+## Ejercicios 8 y 9
+
+## Ejercicio 10
+
+## Ejercicio 11
+
+## Ejercicio 12
+
+## Ejercicio 13
+
+## Ejercicio 14
+
+## Ejercicio 15
