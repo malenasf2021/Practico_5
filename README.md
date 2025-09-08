@@ -82,6 +82,7 @@ Crea una clase base `InstrumentoMusical` con un método abstracto `tocarNota(Str
 Implementa `Guitarra` y `Piano` con comportamientos distintos al tocar la misma nota.
 En el `main`, crea un **arreglo** de `InstrumentoMusical` con distintos instrumentos y haz que toquen una
 secuencia de notas aleatorias.
+
 **Main:**
 ```java
 import java.util.Random;
